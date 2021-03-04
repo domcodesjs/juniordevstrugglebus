@@ -1,45 +1,26 @@
 import React from 'react';
-
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import './Header.css';
 
-export default function Header(props) {
-  const Link = props.link;
+export default function Header() {
   return (
-    <nav className="navbar navbar">
-      <div className="container-fluid">
-        <div className="navbar-header">
-          <a className="navbar-brand" href="/">
-            <h2>JDSB</h2>
-          </a>
-          <button
-            type="button"
-            className="navbar-toggle"
-            data-toggle="collapse"
-            data-target="#myNavbar"
-          >
-            <i className="icon-Align-Right icon icon--lg nav-button-icon text-center" />
-          </button>
-        </div>
-        <div className="collapse navbar-collapse" id="myNavbar">
-          <ul className="nav navbar-nav">
-            <li className="active">
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/resources">Resources</Link>
-            </li>
-            <li>
-              <Link to="/events">Upcoming Events</Link>
-            </li>
-            <li>
-              <Link to="/organization">Organization</Link>
-            </li>
-            <li>
-              <a href="https://juniordevstruggleblog.com/" target="_blank">Blog</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Navbar expand='lg'>
+      <Navbar.Brand href='/' className='navbar-brand'>
+        JDSB
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls='basic-navbar-nav' />
+      <Navbar.Collapse id='basic-navbar-nav'>
+        <Nav className='ml-auto'>
+          <Nav.Link href='/'>Home</Nav.Link>
+          <Nav.Link href='/resources'>Resources</Nav.Link>
+          <Nav.Link href='/events'>Upcoming Events</Nav.Link>
+          <Nav.Link href='/organization'>Organization</Nav.Link>
+          <Nav.Link href='https://juniordevstruggleblog.com/' target='_blank'>
+            Blog
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
